@@ -10,4 +10,4 @@ metadata:
 spec:
   vlanIndex:
     name: myran
-status: {}
+status: {vlanID: 4}
