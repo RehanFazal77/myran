@@ -8,6 +8,19 @@ metadata: # kpt-merge: example/du-example
 spec:
   provider: du.openairinterface.org
   parametersRefs:
+  - apiVersion: ref.nephio.org/v1alpha1
+    kind: Config
+    name: du-myran-cucp-ran
   - apiVersion: workload.nephio.org/v1alpha1
     kind: NFConfig
     name: du-nf-config
+  networkInstances:
+  - name: vpc-cudu-f1
+    interfaces:
+    - f1
+  interfaces:
+  - name: f1
+    ipv4:
+      address: 172.5.0.5/16
+      gateway: ""
+    vlanID: 2
