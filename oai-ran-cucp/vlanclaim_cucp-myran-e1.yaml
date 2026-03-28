@@ -1,0 +1,13 @@
+apiVersion: vlan.resource.nephio.org/v1alpha1
+kind: VLANClaim
+metadata:
+  name: cucp-myran-e1
+  annotations:
+    config.kubernetes.io/local-config: "true"
+    specializer.nephio.org/for: workload.nephio.org/v1alpha1.NFDeployment.cucp-myran
+    specializer.nephio.org/vlanClaimName: vpc-cu-e1-myran-bd
+    specializer.nephio.org/owner: req.nephio.org/v1alpha1.Interface.e1
+spec:
+  vlanIndex:
+    name: myran
+status: {vlanID: 4}
