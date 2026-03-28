@@ -28,6 +28,15 @@ info:
   - monitoring
 pipeline:
   mutators:
+  - name: PackageVariant.addons-myran..0
+    image: ghcr.io/kptdev/krm-functions-catalog/apply-setters:v0.2
+    configMap:
+      cluster-name: myran
+      enable-metrics-server: "true"
+      enable-nginx-ingress: "false"
+      enable-prometheus: "false"
+      local-path-provisioner: "true"
+      storage-class-name: local-path
   - image: ghcr.io/kptdev/krm-functions-catalog/apply-setters:v0.2
     configMap:
       cluster-name: my-ran
